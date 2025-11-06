@@ -6,8 +6,8 @@ import "swiper/css/pagination"
 import 'swiper/css/free-mode';
 import { figtree, barlowSemiCondensed } from '@/lib/font'
 export const metadata = {
-    title: 'Tecture',
-    description: 'Architecture & Interior react next Js template',
+    title: 'SAND VISTA BUILDERS & DEVELOPERS',
+    description: 'Builders & Developers',
 }
 
 export default function RootLayout({ children }) {

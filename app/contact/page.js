@@ -1,11 +1,11 @@
-
+"use client";
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 export default function Home() {
 
     return (
         <>
-        <Layout headerStyle={2} footerStyle={1} breadcrumbTitle="Contact">
+        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Contact">
          {/*Contact Page Start*/}
          <section className="contact-page">
             <div className="section-shape-1" style={{ backgroundImage: ' url(assets/images/shapes/section-shape-1.png)' }} ></div>

@@ -304,7 +304,7 @@
 
 .site-footer__bottom-text a {
     font-weight: 500;
-    color: var(--tecture-base);
+    color: var(--tecture-secondary);
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
