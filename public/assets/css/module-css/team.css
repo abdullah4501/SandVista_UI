@@ -78,7 +78,7 @@
 }
 
 .team-one__title a:hover {
-    color: var(--tecture-base);
+    color: var(--tecture-secondary);
 }
 
 .team-one__social {
