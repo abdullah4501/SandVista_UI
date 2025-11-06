@@ -107,7 +107,7 @@
 }
 
 .thm-breadcrumb li:hover a {
-    color: var(--tecture-base);
+    color: #1dbbad;
 }
 
 .thm-breadcrumb li.active {

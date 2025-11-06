@@ -295,7 +295,7 @@
 .about-two__history-year {
     font-size: 36px;
     font-weight: 700;
-    color: var(--tecture-base);
+    color: var(--tecture-secondary);
     line-height: 36px;
     margin-bottom: 11px;
 }

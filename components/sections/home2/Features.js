@@ -1,70 +1,92 @@
 'use client'
-import Link from "next/link"
-export default function Features() {
-   
-    return (
-        <>
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Controller, Navigation, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import { useState, useEffect } from 'react'
 
-        {/*Feature Two Start */}
+export default function Features({ setFeatureSwiper, mainSwiper }) {
+    const features = [
+        { icon: 'icon-staircase', title: 'INTERIOR DESIGN' },
+        { icon: 'icon-plant', title: 'URBAN DESIGN' },
+        { icon: 'icon-vacuum-cleaner', title: 'LANDSCAPE DESIGN' },
+        { icon: 'icon-vacuum-cleaner', title: 'ARCHITECTURE' },
+        { icon: 'icon-vacuum-cleaner', title: 'LANDSCAPE DESIGN' },
+    ]
+
+    const [activeSlide, setActiveSlide] = useState(0)
+
+    // Update active slide when mainSwiper changes
+    useEffect(() => {
+        if (!mainSwiper) return
+
+        const handleSlideChange = () => {
+            setActiveSlide(mainSwiper.realIndex)
+        }
+
+        mainSwiper.on('slideChange', handleSlideChange)
+        
+        // Cleanup
+        return () => {
+            mainSwiper.off('slideChange', handleSlideChange)
+        }
+    }, [mainSwiper])
+
+    return (
         <section className="feature-two">
-            <div className="section-shape-1" style={{ backgroundImage: ' url(assets/images/shapes/section-shape-1.png)' }} ></div>
-            <div className="container">
-                <div className="row">
-                    {/*Feature Two Single Start */}
-                    <div className="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
-                        <div className="feature-two__single">
-                            <div className="feature-two__icon">
-                                <span className="icon-staircase"></span>
+            {/* Loader Border */}
+            <div className="feature-two__loader">
+                <div 
+                    className="feature-two__loader-progress"
+                    style={{
+                        width: `${(activeSlide + 1) * (100 / features.length)}%`
+                    }}
+                ></div>
+            </div>
+            
+            <div
+                className="section-shape-1"
+                style={{
+                    backgroundImage: 'url(assets/images/shapes/section-shape-1.png)',
+                }}
+            ></div>
+
+            <div className="py-4">
+                <Swiper
+                    onSwiper={setFeatureSwiper}
+                    modules={[]}
+                    spaceBetween={20}
+                    slidesPerView={4.2}
+                    breakpoints={{
+                        0: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                        1200: { slidesPerView: 4 },
+                    }}
+                    className="feature-slider"
+                >
+                    {features.map((feature, index) => (
+                        <SwiperSlide key={index}>
+                            <div
+                                className={`feature-two__single wow fadeInLeft cursor-pointer ${activeSlide === index ? 'active' : ''}`}
+                                data-wow-delay={`${(index + 1) * 100}ms`}
+                                onClick={() => mainSwiper?.slideToLoop(index)}
+                            >
+                                <div className="feature-two__icon">
+                                    <span className={feature.icon}></span>
+                                </div>
+                                <h3 className="feature-two__title">{feature.title}</h3>
+                                <div className="feature-two__shape-box">
+                                    <div className="feature-two__shape-1"></div>
+                                    <div className="feature-two__shape-2"></div>
+                                    <div className="feature-two__shape-3"></div>
+                                </div>
                             </div>
-                            <h3 className="feature-two__title"><Link href="interior-design">INTERRIOR DESIGN</Link></h3>
-                            <p className="feature-two__text">Mrittik Architects is a full-service design firm
-                                providing , master planning, urban design,</p>
-                            <div className="feature-two__shape-box">
-                                <div className="feature-two__shape-1"></div>
-                                <div className="feature-two__shape-2"></div>
-                                <div className="feature-two__shape-3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    {/*Feature Two Single End */}
-                    {/*Feature Two Single Start */}
-                    <div className="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="200ms">
-                        <div className="feature-two__single">
-                            <div className="feature-two__icon">
-                                <span className="icon-plant"></span>
-                            </div>
-                            <h3 className="feature-two__title"><Link href="urban-design">URBAN DESIGN</Link></h3>
-                            <p className="feature-two__text">Mrittik Architects is a full-service design firm
-                                providing , master planning, urban design,</p>
-                            <div className="feature-two__shape-box">
-                                <div className="feature-two__shape-1"></div>
-                                <div className="feature-two__shape-2"></div>
-                                <div className="feature-two__shape-3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    {/*Feature Two Single End */}
-                    {/*Feature Two Single Start */}
-                    <div className="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="300ms">
-                        <div className="feature-two__single last-child">
-                            <div className="feature-two__icon">
-                                <span className="icon-vacuum-cleaner"></span>
-                            </div>
-                            <h3 className="feature-two__title"><Link href="landscape-design">LANDSCAPE DESIGN</Link></h3>
-                            <p className="feature-two__text">Mrittik Architects is a full-service design firm
-                                providing , master planning, urban design,</p>
-                            <div className="feature-two__shape-box">
-                                <div className="feature-two__shape-1"></div>
-                                <div className="feature-two__shape-2"></div>
-                                <div className="feature-two__shape-3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    {/*Feature Two Single End */}
-                </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </section>
-        {/*Feature Two End */}
-        </>
     )
 }

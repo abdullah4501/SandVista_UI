@@ -9,10 +9,9 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu }) {
             <header className="main-header">
                 <nav className="main-menu">
                     <div className="main-menu__wrapper">
-                        <div className="container">
+                        <div className="container header-margin">
                             <div className="main-menu__wrapper-inner">
                                 <div className="main-menu__logo">
-                                    
                                     <Link href="/"><img src="assets/images/resources/logo-2.png" alt="" /></Link>
                                 </div>
                                 {/* <div className="main-menu__top">
@@ -73,9 +72,6 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu }) {
                                                     <Link href="tel:15502505260">+1 (550) 250 5260</Link>
                                                 </div>
                                             </div>
-                                            <Link href="contact" className="thm-btn main-menu__btn">
-                                                Free Quote <span className="icon-up-right-arrow"></span>
-                                            </Link>
                                         </div>
                                     </div>
 

@@ -374,14 +374,36 @@
     display: block;
     background-color: #0a0c09;
     z-index: 10;
+    height: 100vh;
 }
-
+.main-slider-two .main-slider__carousel {
+    height: 100%;
+}
+.main-slider-two .item {
+    height: 100%;
+}
 .main-slider-two .item {
     position: relative;
-    padding-top: 214px;
+    padding-top: 280px;
     padding-bottom: 240px;
     background-color: var(--tecture-black);
     z-index: 10;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.feature-slider,
+.feature-slider * {
+  pointer-events: auto !important;
+}
+
+.main-slider__carousel .swiper-slide:has(.feature-slider) {
+  pointer-events: none !important;
+}
+
+.main-slider__carousel .swiper-slide:has(.feature-slider) .feature-slider {
+  pointer-events: auto !important;
 }
 
 .main-slider-two__bg {

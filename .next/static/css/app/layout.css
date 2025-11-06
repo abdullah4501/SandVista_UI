@@ -15007,7 +15007,7 @@ fieldset:disabled .btn {
 .about-two__history-year {
     font-size: 36px;
     font-weight: 700;
-    color: var(--tecture-base);
+    color: var(--tecture-secondary);
     line-height: 36px;
     margin-bottom: 11px;
 }
@@ -18675,7 +18675,7 @@ fieldset:disabled .btn {
 }
 
 .thm-breadcrumb li:hover a {
-    color: var(--tecture-base);
+    color: #1dbbad;
 }
 
 .thm-breadcrumb li.active {
@@ -19958,14 +19958,36 @@ fieldset:disabled .btn {
     display: block;
     background-color: #0a0c09;
     z-index: 10;
+    height: 100vh;
 }
-
+.main-slider-two .main-slider__carousel {
+    height: 100%;
+}
+.main-slider-two .item {
+    height: 100%;
+}
 .main-slider-two .item {
     position: relative;
-    padding-top: 214px;
+    padding-top: 280px;
     padding-bottom: 240px;
     background-color: var(--tecture-black);
     z-index: 10;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.feature-slider,
+.feature-slider * {
+  pointer-events: auto !important;
+}
+
+.main-slider__carousel .swiper-slide:has(.feature-slider) {
+  pointer-events: none !important;
+}
+
+.main-slider__carousel .swiper-slide:has(.feature-slider) .feature-slider {
+  pointer-events: auto !important;
 }
 
 .main-slider-two__bg {
@@ -21959,12 +21981,37 @@ fieldset:disabled .btn {
 # Feature Two
 --------------------------------------------------------------*/
 .feature-two {
-    position: relative;
+    position: absolute;
     display: block;
-    background-color: var(--tecture-black);
-    border-top: 0px solid var(--tecture-bdr-color);
-    border-bottom: 1px solid var(--tecture-bdr-color);
+    /* background-color: var(--tecture-black); */
     z-index: 10;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.feature-two__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--tecture-bdr-color); /* Your border color */
+    overflow: hidden;
+}
+
+.feature-two__loader-progress {
+    height: 100%;
+    background-color: var(--tecture-secondary); /* Your active color */
+    transition: width 0.5s ease-in-out;
+    width: 0%;
+}
+
+/* Optional: Add active state styling to the feature items */
+.feature-two__single.active {
+    /* Add any active state styles you want */
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
 }
 
 .feature-two .row {
@@ -21974,14 +22021,11 @@ fieldset:disabled .btn {
 .feature-two__single {
     position: relative;
     display: block;
-    border-left: 1px solid var(--tecture-bdr-color);
-    text-align: center;
-    padding: 65px 65px 65px;
+    text-align: left;
+    margin: 0 35px;
 }
 
-.feature-two__single.last-child {
-    border-right: 1px solid var(--tecture-bdr-color);
-}
+
 
 .feature-two__icon {
     position: relative;
@@ -21992,7 +22036,7 @@ fieldset:disabled .btn {
     position: relative;
     display: inline-block;
     font-size: 66px;
-    color: var(--tecture-base);
+    color: var(--tecture-secondary);
     transition: all 500ms linear;
     transition-delay: 0.1s;
 }
@@ -22029,7 +22073,7 @@ fieldset:disabled .btn {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -22048,7 +22092,7 @@ fieldset:disabled .btn {
     height: 14px;
     width: 14px;
     border-radius: 50%;
-    background-color: var(--tecture-base);
+    background-color: var(--tecture-secondary);
 }
 
 .feature-two__shape-3 {
@@ -22057,6 +22101,7 @@ fieldset:disabled .btn {
     width: 70px;
     height: 1px;
     background-color: var(--tecture-white);
+    
 }
 
 
@@ -24819,11 +24864,13 @@ a.video-popup {
   background-color: var(--tecture-white);
   padding: 0 30px 0;
   border-radius: 0 30px 30px 0;
+  gap: 25px;
 }
 
 .main-menu__main-menu-box {
   position: relative;
   display: block;
+  margin-left: auto;
 }
 
 .main-menu__search-and-btn-box {
@@ -25456,7 +25503,7 @@ a.video-popup {
   margin-right: 10px;
   width: 50px;
   height: 50px;
-  background-color: var(--tecture-base);
+  background-color: #1dbbad;
   border-radius: 50%;
   font-size: 18px;
   display: inline-flex;
@@ -26800,9 +26847,6 @@ a.video-popup {
     margin-left: -16px;
   }
 
-  .feature-two__single {
-    padding: 65px 50px 65px;
-  }
 
   .testimonial-two__single {
     padding: 79px 20px 43px;
@@ -26985,9 +27029,6 @@ a.video-popup {
     margin-top: 35px;
   }
 
-  .feature-two__single {
-    padding: 65px 15px 65px;
-  }
 
   .about-two__left {
     max-width: 650px;
@@ -27790,7 +27831,6 @@ a.video-popup {
 
   .feature-two__single {
     border-left: 0;
-    padding: 40px 15px 40px;
   }
 
   .feature-two__single.last-child {
@@ -28593,11 +28633,6 @@ a.video-popup {
   }
 
 
-
-
-
-
-
   .main-slider-three__social {
     display: none;
   }
@@ -28686,7 +28721,7 @@ a.video-popup {
 --------------------------------------------------------------*/
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .main-menu__btn-box {
-    display: none;
+    /* display: none; */
   }
 
   .main-menu__search-box {
@@ -28738,17 +28773,6 @@ a.video-popup {
     display: none;
   }
 
-
-
-
-
-
-
-
-
-
-
-
   .main-menu-two__wrapper-inner {
     padding: 0 60px 0;
   }
@@ -28756,29 +28780,34 @@ a.video-popup {
   .main-menu-two .mobile-nav__toggler:hover {
     color: var(--tecture-white);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
 
+@media screen and (max-width: 991.98px) {
+  .header-margin {
+    max-width: 100% !important;
+  }
+}
+@media screen and (max-width: 830px) {
+  .main-menu__btn-box .main-menu__btn {
+    padding: 10px 20px !important;
+  }
+  .main-menu__btn-box .text .phone {
+    width: 40px;
+    height: 40px;
+  }
+  .main-menu__btn-box .text a {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+ .header-margin {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+ }
+}
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

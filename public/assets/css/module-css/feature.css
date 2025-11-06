@@ -134,12 +134,37 @@
 # Feature Two
 --------------------------------------------------------------*/
 .feature-two {
-    position: relative;
+    position: absolute;
     display: block;
-    background-color: var(--tecture-black);
-    border-top: 0px solid var(--tecture-bdr-color);
-    border-bottom: 1px solid var(--tecture-bdr-color);
+    /* background-color: var(--tecture-black); */
     z-index: 10;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.feature-two__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--tecture-bdr-color); /* Your border color */
+    overflow: hidden;
+}
+
+.feature-two__loader-progress {
+    height: 100%;
+    background-color: var(--tecture-secondary); /* Your active color */
+    transition: width 0.5s ease-in-out;
+    width: 0%;
+}
+
+/* Optional: Add active state styling to the feature items */
+.feature-two__single.active {
+    /* Add any active state styles you want */
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
 }
 
 .feature-two .row {
@@ -149,14 +174,11 @@
 .feature-two__single {
     position: relative;
     display: block;
-    border-left: 1px solid var(--tecture-bdr-color);
-    text-align: center;
-    padding: 65px 65px 65px;
+    text-align: left;
+    margin: 0 35px;
 }
 
-.feature-two__single.last-child {
-    border-right: 1px solid var(--tecture-bdr-color);
-}
+
 
 .feature-two__icon {
     position: relative;
@@ -167,7 +189,7 @@
     position: relative;
     display: inline-block;
     font-size: 66px;
-    color: var(--tecture-base);
+    color: var(--tecture-secondary);
     -webkit-transition: all 500ms linear;
     transition: all 500ms linear;
     -webkit-transition-delay: 0.1s;
@@ -206,7 +228,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -225,7 +247,7 @@
     height: 14px;
     width: 14px;
     border-radius: 50%;
-    background-color: var(--tecture-base);
+    background-color: var(--tecture-secondary);
 }
 
 .feature-two__shape-3 {
@@ -234,6 +256,7 @@
     width: 70px;
     height: 1px;
     background-color: var(--tecture-white);
+    
 }
 
 

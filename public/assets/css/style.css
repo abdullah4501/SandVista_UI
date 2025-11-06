@@ -981,11 +981,13 @@ a.video-popup {
   background-color: var(--tecture-white);
   padding: 0 30px 0;
   border-radius: 0 30px 30px 0;
+  gap: 25px;
 }
 
 .main-menu__main-menu-box {
   position: relative;
   display: block;
+  margin-left: auto;
 }
 
 .main-menu__search-and-btn-box {
@@ -1715,7 +1717,7 @@ a.video-popup {
   margin-right: 10px;
   width: 50px;
   height: 50px;
-  background-color: var(--tecture-base);
+  background-color: #1dbbad;
   border-radius: 50%;
   font-size: 18px;
   display: inline-flex;
@@ -3094,9 +3096,6 @@ a.video-popup {
     margin-left: -16px;
   }
 
-  .feature-two__single {
-    padding: 65px 50px 65px;
-  }
 
   .testimonial-two__single {
     padding: 79px 20px 43px;
@@ -3279,9 +3278,6 @@ a.video-popup {
     margin-top: 35px;
   }
 
-  .feature-two__single {
-    padding: 65px 15px 65px;
-  }
 
   .about-two__left {
     max-width: 650px;
@@ -4084,7 +4080,6 @@ a.video-popup {
 
   .feature-two__single {
     border-left: 0;
-    padding: 40px 15px 40px;
   }
 
   .feature-two__single.last-child {
@@ -4887,11 +4882,6 @@ a.video-popup {
   }
 
 
-
-
-
-
-
   .main-slider-three__social {
     display: none;
   }
@@ -4980,7 +4970,7 @@ a.video-popup {
 --------------------------------------------------------------*/
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .main-menu__btn-box {
-    display: none;
+    /* display: none; */
   }
 
   .main-menu__search-box {
@@ -5032,17 +5022,6 @@ a.video-popup {
     display: none;
   }
 
-
-
-
-
-
-
-
-
-
-
-
   .main-menu-two__wrapper-inner {
     padding: 0 60px 0;
   }
@@ -5050,29 +5029,34 @@ a.video-popup {
   .main-menu-two .mobile-nav__toggler:hover {
     color: var(--tecture-white);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
 
+@media screen and (max-width: 991.98px) {
+  .header-margin {
+    max-width: 100% !important;
+  }
+}
+@media screen and (max-width: 830px) {
+  .main-menu__btn-box .main-menu__btn {
+    padding: 10px 20px !important;
+  }
+  .main-menu__btn-box .text .phone {
+    width: 40px;
+    height: 40px;
+  }
+  .main-menu__btn-box .text a {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+ .header-margin {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+ }
+}
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
