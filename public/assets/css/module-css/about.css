@@ -237,7 +237,7 @@
 .about-two {
     position: relative;
     display: block;
-    padding: 120px 0 120px;
+    padding:240px 0 120px;
     overflow: hidden;
     background-color: var(--tecture-black);
     z-index: 1;

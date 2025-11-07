@@ -12,14 +12,6 @@ export default function Footer1() {
                 <img src="assets/images/shapes/site-footer-shape-2.png" alt=""/>
             </div>
 
-            <div className="site-footer__marquee">
-                <ul className="marquee_mode">
-                    <li>Interior Design</li>
-                    <li>luxury homes</li>
-                    <li>construction simulator</li>
-                </ul>
-            </div>
-
             <div className="container">
                 <div className="site-footer__top">
                     <div className="row">

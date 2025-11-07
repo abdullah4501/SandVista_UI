@@ -57,12 +57,13 @@ export default function Features({ setFeatureSwiper, mainSwiper }) {
                     onSwiper={setFeatureSwiper}
                     modules={[]}
                     spaceBetween={20}
-                    slidesPerView={4.2}
+                    slidesPerView={4.3}
                     breakpoints={{
-                        0: { slidesPerView: 1 },
-                        768: { slidesPerView: 2 },
-                        1024: { slidesPerView: 3 },
-                        1200: { slidesPerView: 4 },
+                        0: { slidesPerView: 1.3 },
+                        520: { slidesPerView: 2.2 },
+                        768: { slidesPerView: 3 },
+                        992: { slidesPerView: 3.2 },
+                        1200: { slidesPerView: 4.3 },
                     }}
                     className="feature-slider"
                 >
