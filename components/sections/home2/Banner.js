@@ -109,6 +109,45 @@ export default function Banner() {
                             </div>
                         </div>
                     </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="item">
+                            <div
+                                className="main-slider-two__bg"
+                                style={{ backgroundImage: 'url(assets/images/backgrounds/slider-1-1.jpg)' }}
+                            ></div>
+                            <div className="container">
+                                <div className="main-slider-two__content">
+                                    <h2 className="main-slider-two__title">Modern Urban <br /> Architecture</h2>
+                                    <p className="main-slider-two__text">Experience innovative urban design blending functionality with aesthetics.</p>
+                                    <div className="main-slider-two__btn-box">
+                                        <Link href="architecture" className="thm-btn main-slider-two__btn">
+                                            More Details <span className="icon-up-right-arrow"></span>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="item">
+                            <div
+                                className="main-slider-two__bg"
+                                style={{ backgroundImage: 'url(assets/images/backgrounds/slider-1-2.jpg)' }}
+                            ></div>
+                            <div className="container">
+                                <div className="main-slider-two__content">
+                                    <h2 className="main-slider-two__title">Landscape & <br /> Outdoor Design</h2>
+                                    <p className="main-slider-two__text">Create breathtaking outdoor environments that harmonize with nature.</p>
+                                    <div className="main-slider-two__btn-box">
+                                        <Link href="landscape-design" className="thm-btn main-slider-two__btn">
+                                            More Details <span className="icon-up-right-arrow"></span>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+
                 </Swiper>
 
                 {/* Features Component - NOW OUTSIDE the Swiper but inside the same section */}

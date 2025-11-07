@@ -6,7 +6,6 @@
     display: block;
     background-color: var(--tecture-black);
     overflow: hidden;
-    padding-top: 120px;
     z-index: 1;
 }
 

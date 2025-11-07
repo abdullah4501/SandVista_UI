@@ -75,17 +75,68 @@ body {
   line-height: 26px;
   font-weight: 400;
   color: var(--tecture-gray);
+  overflow: hidden;
 }
 
 body.locked {
   overflow: hidden;
 }
 
+
 .body-bg-color-1 {
   position: relative;
   background-color: #0a0c09;
 }
 
+/* the horizontal scroller */
+.horizontal-scroll {
+  display: block;
+  /* NOT flex → avoids breaking Swiper */
+  white-space: nowrap;
+  overflow-x: hidden;
+  /* hidden (we’re controlling scrollLeft) */
+  overflow-y: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* each section keeps its own layout, spans the viewport */
+.horizontal-scroll>* {
+  display: inline-block;
+  vertical-align: top;
+  width: 100vw;
+  height: 100vh;
+  white-space: normal;
+  /* allow normal content wrapping inside */
+}
+
+/* hide native scrollbar everywhere */
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-scroll>.footer-panel {
+  display: inline-block;
+  vertical-align: top;
+  width: 100vw;
+  height: 100vh;
+  /* not full screen; lets footer be natural height */
+  white-space: normal;
+  /* allow wrapping inside footer */
+}
+.horizontal-scroll>.footer-panel .site-footer{
+  height: 100%;
+  padding-top: 240px;
+}
+body.locked footer {
+  position: relative;
+  z-index: 11;
+}
 .theme-border-left {
   position: absolute;
   top: 0;
@@ -343,7 +394,7 @@ a.video-popup {
 
 .thm-btn:before {
   content: "";
-  background-color: var(--tecture-white);
+  background-color: #1dbbad;
   width: 50%;
   height: 0;
   position: absolute;
@@ -355,7 +406,7 @@ a.video-popup {
 
 .thm-btn:after {
   content: "";
-  background-color: var(--tecture-white);
+  background-color: #1dbbad;
   width: 50%;
   height: 0;
   position: absolute;
@@ -371,7 +422,7 @@ a.video-popup {
 }
 
 .thm-btn:hover {
-  color: var(--tecture-black);
+  color: var(--tecture-white);
 }
 
 
@@ -1080,6 +1131,7 @@ a.video-popup {
   padding-bottom: 27px;
   position: relative;
 }
+
 .main-menu .main-menu__list>li {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -1706,13 +1758,16 @@ a.video-popup {
   align-items: center;
   gap: 35px;
 }
+
 .main-menu__btn-box .text a {
   color: #161616;
 }
+
 .main-menu__btn-box .text {
   display: flex;
   align-items: center;
 }
+
 .main-menu__btn-box .text .phone {
   margin-right: 10px;
   width: 50px;
@@ -4873,14 +4928,21 @@ a.video-popup {
   }
 
   .main-slider-two .item {
-    padding-top: 139px;
+    padding-top: 120px;
     padding-bottom: 240px;
+  }
+
+  .main-header {
+    padding-top: 0;
   }
 
   .main-slider-two .owl-nav {
     display: none;
   }
 
+  .main-slider-two {
+    height: 100vh;
+  }
 
   .main-slider-three__social {
     display: none;
@@ -4998,22 +5060,7 @@ a.video-popup {
     display: none;
   }
 
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
 
 
 
@@ -5037,25 +5084,53 @@ a.video-popup {
   .header-margin {
     max-width: 100% !important;
   }
+
+  body {
+    overflow: auto !important;
+  }
+  .about-two, .team-one {
+    padding-top: 120px;
+  }
+  .horizontal-scroll {
+    white-space: normal;
+    /* stop horizontal line-up */
+    overflow-x: auto;
+    overflow-y: auto;
+    height: auto;
+    /* allow page to grow */
+    width: 100%;
+  }
+
+  .horizontal-scroll>* {
+    display: block;
+    /* stack vertically */
+    width: 100%;
+    height: auto;
+    /* sections get natural height */
+  }
 }
+
+
 @media screen and (max-width: 830px) {
   .main-menu__btn-box .main-menu__btn {
     padding: 10px 20px !important;
   }
+
   .main-menu__btn-box .text .phone {
     width: 40px;
     height: 40px;
   }
+
   .main-menu__btn-box .text a {
     font-size: 15px;
   }
 }
 
 @media screen and (max-width: 768px) {
- .header-margin {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
- }
+  .header-margin {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 
