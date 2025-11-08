@@ -1847,6 +1847,9 @@ a.video-popup {
   color: var(--tecture-white);
 }
 
+.text-white {
+  color: var(--tecture-white) !important;
+}
 .main-menu-two__search:hover {
   background-color: var(--tecture-black);
   border: 1px solid var(--tecture-black);
@@ -2756,7 +2759,12 @@ a.video-popup {
   transition: all 0.5s ease;
   z-index: 1;
 }
-
+.items-center {
+  align-items: center !important;
+}
+.justify-center {
+  justify-content: center;
+}
 .welcome-style1__img .img2:hover::before {
   opacity: .50;
 }
@@ -5091,6 +5099,9 @@ a.video-popup {
   .about-two, .team-one {
     padding-top: 120px;
   }
+  .about-two__img img {
+    width: 100%;
+  }
   .horizontal-scroll {
     white-space: normal;
     /* stop horizontal line-up */
@@ -5100,6 +5111,12 @@ a.video-popup {
     /* allow page to grow */
     width: 100%;
   }
+  .testimonial-one {
+    padding-top: 120px;
+  }
+  .about-two {
+    height: auto !important;
+  }
 
   .horizontal-scroll>* {
     display: block;
@@ -5108,6 +5125,7 @@ a.video-popup {
     height: auto;
     /* sections get natural height */
   }
+
 }
 
 

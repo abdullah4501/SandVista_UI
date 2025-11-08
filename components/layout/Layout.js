@@ -30,20 +30,7 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
     const [isSidebar, setSidebar] = useState(false)
     const handleSidebar = () => setSidebar(!isSidebar)
 
-    // useEffect(() => {
-    //     const WOW = require('wowjs').default;
-    //     window.wow = new WOW({
-    //         live: false
-    //     });
-    //     window.wow.init();
 
-    //     document.addEventListener("scroll", () => {
-    //         const scrollCheck = window.scrollY > 100;
-    //         if (scrollCheck !== scroll) {
-    //             setScroll(scrollCheck);
-    //         }
-    //     });
-    // }, [scroll]);
     return (
         <>
             <DataBg />
@@ -61,10 +48,10 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
 
                 {children}
 
-                {!footerStyle && < Footer1 />}
+                {/* {!footerStyle && < Footer1 />}
                 {footerStyle == 1 ? < Footer1 /> : null}
                 {footerStyle == 2 ? < Footer2 /> : null}
-                {footerStyle == 3 ? < Footer3 /> : null}
+                {footerStyle == 3 ? < Footer3 /> : null} */}
             </div>
             {/* <BackToTop scroll={scroll} /> */}
         </>

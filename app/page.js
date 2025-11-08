@@ -5,6 +5,7 @@ import Layout from '@/components/layout/Layout'
 import Banner from '@/components/sections/home2/Banner'
 import About from '@/components/sections/home2/About'
 import Team from '@/components/sections/home2/Team'
+import NewFooter from '@/components/sections/home1/Testimonial'
 import Footer1 from '@/components/layout/footer/Footer1'
 
 export default function Home() {
@@ -22,16 +23,12 @@ export default function Home() {
   useHorizontalScroll(scrollContainerRef, { speed: 1.6, ease: 0.1, breakpoint: 992 })
 
   return (
-    <Layout headerStyle={1} footerStyle={1}>
+    <Layout >
       <div ref={scrollContainerRef} className="horizontal-scroll">
-        <Banner />
-        <About />
-        {/* Footer only inside scroll on desktop */}
-        {isDesktop && (
-          <section className="footer-panel">
-            <Footer1 />
-          </section>
-        )}
+        <section id="home"><Banner /></section>
+        <section id="about"><About /></section>
+        <section id="team"><NewFooter /></section>
+        
       </div>
     </Layout>
   )

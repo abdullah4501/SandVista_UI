@@ -6,14 +6,15 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { useState, useEffect } from 'react'
 
-export default function Features({ setFeatureSwiper, mainSwiper }) {
+export default function Features({ setFeatureSwiper, mainSwiper, featureSwiper }) {
     const features = [
-        { icon: 'icon-staircase', title: 'INTERIOR DESIGN' },
-        { icon: 'icon-plant', title: 'URBAN DESIGN' },
-        { icon: 'icon-vacuum-cleaner', title: 'LANDSCAPE DESIGN' },
-        { icon: 'icon-vacuum-cleaner', title: 'ARCHITECTURE' },
-        { icon: 'icon-vacuum-cleaner', title: 'LANDSCAPE DESIGN' },
+        { icon: 'icon-staircase', title: 'Welcome to Sand Vista' }, // 1. Symbolic of building structure
+        { icon: 'icon-globe', title: 'Innovation & Sustainability' }, // 2. Global / forward-thinking
+        { icon: 'icon-trading', title: 'Global Construction Trends' }, // 3. Represents expansion / business
+        { icon: 'icon-engineer', title: 'Digital & Smart Operations' }, // 4. Engineering precision
+        { icon: 'icon-workstations', title: 'Prefabrication & Modular Construction' }, // 5. Work environment / modular setup
     ]
+
 
     const [activeSlide, setActiveSlide] = useState(0)
 
@@ -26,25 +27,28 @@ export default function Features({ setFeatureSwiper, mainSwiper }) {
         }
 
         mainSwiper.on('slideChange', handleSlideChange)
-        
+
         // Cleanup
         return () => {
             mainSwiper.off('slideChange', handleSlideChange)
         }
     }, [mainSwiper])
 
+    const total = features.length
+    const progress =
+        total > 1 ? (activeSlide * 100) / (total - 1) : 100
+
     return (
         <section className="feature-two">
             {/* Loader Border */}
             <div className="feature-two__loader">
-                <div 
+                <div
                     className="feature-two__loader-progress"
-                    style={{
-                        width: `${(activeSlide + 1) * (100 / features.length)}%`
-                    }}
+                    style={{ width: `${progress}%` }}
+
                 ></div>
             </div>
-            
+
             <div
                 className="section-shape-1"
                 style={{
@@ -72,7 +76,27 @@ export default function Features({ setFeatureSwiper, mainSwiper }) {
                             <div
                                 className={`feature-two__single wow fadeInLeft cursor-pointer ${activeSlide === index ? 'active' : ''}`}
                                 data-wow-delay={`${(index + 1) * 100}ms`}
-                                onClick={() => mainSwiper?.slideToLoop(index)}
+                                onClick={() => {
+  if (!mainSwiper || !featureSwiper) return;
+
+  // Move the main banner
+  mainSwiper.slideTo(index);
+
+  // Get current visible range
+  const current = featureSwiper.activeIndex;
+  const perView = Math.floor(featureSwiper.params.slidesPerView || 1);
+  const visibleStart = current;
+  const visibleEnd = current + perView - 1;
+
+  // Scroll features slider if clicked slide is outside visible range
+  if (index < visibleStart) {
+    featureSwiper.slideTo(index);
+  } else if (index > visibleEnd) {
+    featureSwiper.slideTo(index - perView + 1);
+  }
+}}
+
+
                             >
                                 <div className="feature-two__icon">
                                     <span className={feature.icon}></span>

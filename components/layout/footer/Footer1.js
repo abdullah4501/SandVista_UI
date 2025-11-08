@@ -15,7 +15,7 @@ export default function Footer1() {
             <div className="container">
                 <div className="site-footer__top">
                     <div className="row">
-                        <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                             <div className="footer-widget__column footer-widget__about">
                                 <div className="footer-widget__logo">
                                     <Link href="/"><img src="assets/images/resources/logo-2.png"
@@ -32,7 +32,7 @@ export default function Footer1() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                             <div className="footer-widget__column footer-widget__usefull-link">
                                 <div className="footer-widget__title-box">
                                     <h3 className="footer-widget__title">Useful Links</h3>
@@ -56,7 +56,7 @@ export default function Footer1() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                             <div className="footer-widget__column footer-widget__services">
                                 <div className="footer-widget__title-box">
                                     <h3 className="footer-widget__title">Our Services</h3>
@@ -69,51 +69,6 @@ export default function Footer1() {
                                     <li><Link href="eden-home-styling">Eden Home Styling</Link></li>
                                     <li><Link href="interior-design">Interior Design </Link></li>
                                     <li><Link href="urban-design">Human Resources</Link></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                            <div className="footer-widget__column footer-widget__instagram">
-                                <div className="footer-widget__title-box">
-                                    <h3 className="footer-widget__title">Instagram</h3>
-                                </div>
-                                <ul className="footer-widget__instagram-list list-unstyled clearfix">
-                                    <li>
-                                        <div className="footer-widget__instagram-img">
-                                            <img src="assets/images/resources/footer-widget-instagram-img-1.jpg" alt=""/>
-                                            <Link href="#"><span className="fab fa-instagram"></span></Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="footer-widget__instagram-img">
-                                            <img src="assets/images/resources/footer-widget-instagram-img-2.jpg" alt=""/>
-                                            <Link href="#"><span className="fab fa-instagram"></span></Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="footer-widget__instagram-img">
-                                            <img src="assets/images/resources/footer-widget-instagram-img-3.jpg" alt=""/>
-                                            <Link href="#"><span className="fab fa-instagram"></span></Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="footer-widget__instagram-img">
-                                            <img src="assets/images/resources/footer-widget-instagram-img-4.jpg" alt=""/>
-                                            <Link href="#"><span className="fab fa-instagram"></span></Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="footer-widget__instagram-img">
-                                            <img src="assets/images/resources/footer-widget-instagram-img-5.jpg" alt=""/>
-                                            <Link href="#"><span className="fab fa-instagram"></span></Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="footer-widget__instagram-img">
-                                            <img src="assets/images/resources/footer-widget-instagram-img-6.jpg" alt=""/>
-                                            <Link href="#"><span className="fab fa-instagram"></span></Link>
-                                        </div>
-                                    </li>
                                 </ul>
                             </div>
                         </div>

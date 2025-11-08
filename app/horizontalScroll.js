@@ -1,7 +1,17 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
-export default function useHorizontalScroll(ref, { speed = 2, ease = 0.1, breakpoint = 992 } = {}) {
+export default function useHorizontalScroll(
+  ref,
+  { speed = 2, ease = 0.1, breakpoint = 992 } = {}
+) {
+  const targetRef = useRef(0)
+
+  // expose a helper so external code can scroll correctly
+  const scrollToX = (x) => {
+    targetRef.current = x
+  }
+
   useEffect(() => {
     document.body.classList.add('preload')
 
@@ -9,30 +19,26 @@ export default function useHorizontalScroll(ref, { speed = 2, ease = 0.1, breakp
     if (!container) return
 
     const isMobile = window.matchMedia(`(max-width: ${breakpoint}px)`).matches
-
-    // --- MOBILE / TABLET ---
     if (isMobile) {
-      document.body.classList.remove('preload')
-      document.body.classList.remove('locked')
+      document.body.classList.remove('preload', 'locked')
       container.style.overflowX = 'auto'
       container.style.overflowY = 'auto'
       return
     }
 
-    // --- DESKTOP ---
     document.body.classList.remove('preload')
     document.body.classList.add('locked')
     container.style.overflow = 'hidden'
 
     let current = container.scrollLeft
-    let target = container.scrollLeft
+    targetRef.current = current
     let rafId
 
     const clamp = (v, min, max) => Math.max(min, Math.min(v, max))
     const lerp = (a, b, t) => a + (b - a) * t
 
     const animate = () => {
-      current = lerp(current, target, ease)
+      current = lerp(current, targetRef.current, ease)
       container.scrollLeft = current
       rafId = requestAnimationFrame(animate)
     }
@@ -40,10 +46,9 @@ export default function useHorizontalScroll(ref, { speed = 2, ease = 0.1, breakp
     const onWheel = (e) => {
       e.preventDefault()
       const max = container.scrollWidth - container.clientWidth
-      target = clamp(target + e.deltaY * speed, 0, max)
+      targetRef.current = clamp(targetRef.current + e.deltaY * speed, 0, max)
     }
 
-    // touch support for large screens
     let startY = 0
     let startScroll = 0
 
@@ -55,12 +60,13 @@ export default function useHorizontalScroll(ref, { speed = 2, ease = 0.1, breakp
     const onTouchMove = (e) => {
       const dy = e.touches[0].pageY - startY
       container.scrollLeft = startScroll - dy * 1.4
-      target = container.scrollLeft
+      targetRef.current = container.scrollLeft
     }
 
     container.addEventListener('wheel', onWheel, { passive: false })
     container.addEventListener('touchstart', onTouchStart, { passive: true })
     container.addEventListener('touchmove', onTouchMove, { passive: true })
+
     rafId = requestAnimationFrame(animate)
 
     return () => {
@@ -68,8 +74,9 @@ export default function useHorizontalScroll(ref, { speed = 2, ease = 0.1, breakp
       container.removeEventListener('wheel', onWheel)
       container.removeEventListener('touchstart', onTouchStart)
       container.removeEventListener('touchmove', onTouchMove)
-      document.body.classList.remove('locked')
-      document.body.classList.remove('preload')
+      document.body.classList.remove('locked', 'preload')
     }
   }, [ref, speed, ease, breakpoint])
+
+  return scrollToX
 }

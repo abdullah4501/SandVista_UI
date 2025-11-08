@@ -237,10 +237,11 @@
 .about-two {
     position: relative;
     display: block;
-    padding:240px 0 120px;
+    padding: 190px 0 120px;
     overflow: hidden;
     background-color: var(--tecture-black);
     z-index: 1;
+    height: 100vh;
 }
 
 .about-two__shape-1 {
@@ -248,6 +249,18 @@
     bottom: 0;
     left: 0;
     z-index: -1;
+}
+
+.about-end {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--tecture-white);
+}
+.about-subtitle {
+    font-size: 25px;
+    font-weight: 600;
+    color: #1dbbad;
+    margin-top: 12px;
 }
 
 .about-two__shape-1 img {
@@ -318,7 +331,8 @@
 
 .about-two__img {
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: end;
     overflow: hidden;
     z-index: 1;
 }
@@ -342,7 +356,7 @@
 }
 
 .about-two__img img {
-    width: 100%;
+    width: 90%;
     transform: scale3d(1, 1, 1);
     transition: transform 1s ease-in-out;
 }
@@ -351,7 +365,9 @@
     transform: scale(1.05) rotate(0deg);
 }
 
-
+.items-start {
+    align-items: flex-start !important;
+}
 
 
 /*-------------------------------------------------
