@@ -16,10 +16,10 @@ export default function Menu() {
       </li>
       <li>
         <a
-          href="#"
+          href="#banner"
           onClick={(e) => {
             e.preventDefault();
-            goToSection("about");
+            goToSection("banner");
             
           }}
         >
