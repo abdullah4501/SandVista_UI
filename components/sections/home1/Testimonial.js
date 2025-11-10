@@ -18,7 +18,7 @@ export default function Testimonial() {
                     <h2 className="section-title__title title-animation mb-5" >
                         Let’s Talk!
                     </h2>
-                    <p className="testimonial-one__text">The foundation of each architectural project is the conceptual. Spanish <br /> Sandperch flyingfis Spanish mackerel yellow Sand.</p>
+                    <p className="testimonial-one__text"> Join the Revolution. <br /> Partner with <span style={{fontWeight:'700', color: '#3bacef'}}>Sand Vista</span> and be part of Pakistan’s new construction frontier. Let us build smarter, greener, and stronger together.</p>
                 </div>
 
                 <div className="testimonial-one__top">

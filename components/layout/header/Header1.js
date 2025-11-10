@@ -13,7 +13,11 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu }) {
                         <div className="container header-margin">
                             <div className="main-menu__wrapper-inner">
                                 <div className="main-menu__logo">
-                                    <Link href="/" onClick={() => goToSection("banner")}><img src="assets/images/resources/logo-2.png" alt="" /></Link>
+                                    <Link href="/"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        goToSection("home");
+                                    }}><img src="assets/images/resources/logo-2.png" alt="" /></Link>
                                 </div>
                                 <div className="main-menu__bottom">
                                     <div className="main-menu__main-menu-box">
@@ -22,7 +26,7 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu }) {
                                     </div>
 
                                     <div className="main-menu__search-and-btn-box">
-                                      
+
                                     </div>
 
                                 </div>

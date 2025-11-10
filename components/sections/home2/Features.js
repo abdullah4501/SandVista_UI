@@ -78,25 +78,18 @@ export default function Features({ setFeatureSwiper, mainSwiper, featureSwiper }
                                 data-wow-delay={`${(index + 1) * 100}ms`}
                                 onClick={() => {
                                     if (!mainSwiper || !featureSwiper) return;
-
-                                    // Move the main banner
+                                    const swiper = featureSwiper;
+                                    const current = mainSwiper.realIndex;
+                                    // Move main banner
                                     mainSwiper.slideTo(index);
 
-                                    // Get current visible range
-                                    const current = featureSwiper.activeIndex;
-                                    const perView = Math.floor(featureSwiper.params.slidesPerView || 1);
-                                    const visibleStart = current;
-                                    const visibleEnd = current + perView - 1;
-
-                                    // Scroll features slider if clicked slide is outside visible range
-                                    if (index < visibleStart) {
-                                        featureSwiper.slideTo(index);
-                                    } else if (index > visibleEnd) {
-                                        featureSwiper.slideTo(index - perView + 1);
+                                    if (index > current) {
+                                        swiper.slideNext();
+                                    }
+                                    else if (index < current) {
+                                        swiper.slidePrev();
                                     }
                                 }}
-
-
                             >
                                 <div className="feature-two__icon">
                                     <span className={feature.icon}></span>

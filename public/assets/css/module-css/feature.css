@@ -160,13 +160,6 @@
     width: 0%;
 }
 
-/* Optional: Add active state styling to the feature items */
-.feature-two__single.active {
-    /* Add any active state styles you want */
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
-}
-
 .feature-two .row {
     --bs-gutter-x: 0px;
 }
