@@ -23,16 +23,6 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu }) {
 
                                     <div className="main-menu__search-and-btn-box">
                                       
-                                        {/* <div className="main-menu__btn-box">
-                                            <div className="text">
-                                                <span className="phone">
-                                                    <i className="fa fa-phone"></i>
-                                                </span>
-                                                <div >
-                                                    <Link href="tel:15502505260">+1 (550) 250 5260</Link>
-                                                </div>
-                                            </div>
-                                        </div> */}
                                     </div>
 
                                 </div>
@@ -46,12 +36,11 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu }) {
                 <div className="sticky-header__content">
                     <nav className="main-menu">
                         <div className="main-menu__wrapper">
-                            <div className="container">
+                            <div className="">
                                 <div className="main-menu__wrapper-inner">
                                     <div className="main-menu__logo">
-                                        <div className="section-shape-1"
-                                            style={{ backgroundImage: ' url(assets/images/shapes/section-shape-1.png)' }} ></div>
-                                        <Link href="/"><img src="assets/images/resources/logo-1.png" alt="" /></Link>
+                                        <div className="section-shape-1"></div>
+                                        <Link href="/"><img src="assets/images/resources/logo-2.png" alt="" /></Link>
                                     </div>
                                     <div className="main-menu__top">
                                         <div className="main-menu__top-inner">
@@ -94,19 +83,6 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu }) {
                                         <div className="main-menu__main-menu-box">
                                             <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu}><i className="fa fa-bars"></i></Link>
                                             <Menu />
-                                        </div>
-
-                                        <div className="main-menu__search-and-btn-box">
-                                            <div className="main-menu__search-box">
-                                                <Link href="#"
-                                                    className="main-menu__search search-toggler icon-search-interface-symbol" onClick={handlePopup}>
-                                                </Link>
-                                            </div>
-                                            <div className="main-menu__btn-box">
-                                                <Link href="contact" className="thm-btn main-menu__btn">
-                                                    Free Quote <span className="icon-up-right-arrow"></span>
-                                                </Link>
-                                            </div>
                                         </div>
 
                                     </div>

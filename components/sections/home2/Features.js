@@ -56,7 +56,7 @@ export default function Features({ setFeatureSwiper, mainSwiper, featureSwiper }
                 }}
             ></div>
 
-            <div className="py-4">
+            <div className="py-4 res-py">
                 <Swiper
                     onSwiper={setFeatureSwiper}
                     modules={[]}
@@ -77,24 +77,24 @@ export default function Features({ setFeatureSwiper, mainSwiper, featureSwiper }
                                 className={`feature-two__single wow fadeInLeft cursor-pointer ${activeSlide === index ? 'active' : ''}`}
                                 data-wow-delay={`${(index + 1) * 100}ms`}
                                 onClick={() => {
-  if (!mainSwiper || !featureSwiper) return;
+                                    if (!mainSwiper || !featureSwiper) return;
 
-  // Move the main banner
-  mainSwiper.slideTo(index);
+                                    // Move the main banner
+                                    mainSwiper.slideTo(index);
 
-  // Get current visible range
-  const current = featureSwiper.activeIndex;
-  const perView = Math.floor(featureSwiper.params.slidesPerView || 1);
-  const visibleStart = current;
-  const visibleEnd = current + perView - 1;
+                                    // Get current visible range
+                                    const current = featureSwiper.activeIndex;
+                                    const perView = Math.floor(featureSwiper.params.slidesPerView || 1);
+                                    const visibleStart = current;
+                                    const visibleEnd = current + perView - 1;
 
-  // Scroll features slider if clicked slide is outside visible range
-  if (index < visibleStart) {
-    featureSwiper.slideTo(index);
-  } else if (index > visibleEnd) {
-    featureSwiper.slideTo(index - perView + 1);
-  }
-}}
+                                    // Scroll features slider if clicked slide is outside visible range
+                                    if (index < visibleStart) {
+                                        featureSwiper.slideTo(index);
+                                    } else if (index > visibleEnd) {
+                                        featureSwiper.slideTo(index - perView + 1);
+                                    }
+                                }}
 
 
                             >

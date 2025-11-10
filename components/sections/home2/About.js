@@ -12,7 +12,7 @@ export default function About() {
                 </div>
                 <div className="container">
                     <div className="row items-start">
-                        <div className="col-xl-6 wow fadeInLeft" data-wow-delay="100ms">
+                        <div className="col-md-6 col- wow fadeInLeft" data-wow-delay="100ms">
                             <div className="about-two__left">
                                 <div className="section-title text-left sec-title-animation animation-style2">
                                     <h2 className="section-title__title title-animation">
@@ -54,7 +54,7 @@ export default function About() {
                             </div>
 
                         </div>
-                        <div className="col-xl-6 wow fadeInRight" data-wow-delay="300ms">
+                        <div className="col-md-6 wow fadeInRight" data-wow-delay="300ms">
                             <div className="about-two__right">
                                 <div className="about-two__img">
                                     <img src="assets/images/team/1.png" alt="" />

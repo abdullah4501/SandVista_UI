@@ -30,6 +30,27 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
     const [isSidebar, setSidebar] = useState(false)
     const handleSidebar = () => setSidebar(!isSidebar)
 
+    useEffect(() => {
+        let lastScrollY = 0;
+
+        const handleScroll = () => {
+            const current = window.scrollY;
+
+            // Show sticky header when scrolling down
+            if (current > lastScrollY && current > 50) {
+                setScroll(1);
+            }
+            // Hide sticky header when scrolling up
+            else if (current < lastScrollY) {
+                setScroll(0);
+            }
+
+            lastScrollY = current;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <>
