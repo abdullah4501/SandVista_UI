@@ -21,6 +21,16 @@
     width: auto;
 }
 
+.mobile-nav__contact a {
+    white-space: normal;
+    /* allow wrapping */
+    word-break: break-all;
+    /* break long email words */
+    display: inline-block;
+    /* helps wrapping */
+    line-height: 1.4;
+}
+
 .site-footer__shape-2 {
     position: absolute;
     right: 0;

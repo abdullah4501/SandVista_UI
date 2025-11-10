@@ -92,7 +92,8 @@ body.locked {
   display: block;
   white-space: nowrap;
   overflow-x: hidden;
-  overflow-y: auto; /* Changed from hidden to auto */
+  overflow-y: auto;
+  /* Changed from hidden to auto */
   height: 100vh;
   width: 100vw;
 }
@@ -102,16 +103,19 @@ body.locked {
   display: inline-block;
   vertical-align: top;
   width: 100vw;
-  height: auto; /* Changed from 100vh to auto */
-  min-height: 100vh; /* Ensure at least full viewport height */
+  height: auto;
+  /* Changed from 100vh to auto */
+  min-height: 100vh;
+  /* Ensure at least full viewport height */
   white-space: normal;
 }
 
 /* For sections that need specific height control */
-.horizontal-scroll > .panel {
+.horizontal-scroll>.panel {
   height: auto;
   min-height: 100vh;
-  overflow-y: visible; /* Allow content to flow naturally */
+  overflow-y: visible;
+  /* Allow content to flow naturally */
 }
 
 /* hide native scrollbar everywhere */
@@ -134,14 +138,17 @@ body.locked {
   white-space: normal;
   /* allow wrapping inside footer */
 }
-.horizontal-scroll>.footer-panel .site-footer{
+
+.horizontal-scroll>.footer-panel .site-footer {
   height: 100%;
   padding-top: 240px;
 }
+
 body.locked footer {
   position: relative;
   z-index: 11;
 }
+
 .theme-border-left {
   position: absolute;
   top: 0;
@@ -1094,11 +1101,6 @@ a.video-popup {
   background-color: #0a0c09;
 }
 
-
-
-
-
-
 .main-menu .main-menu__list,
 .main-menu .main-menu__list>li>ul,
 .main-menu .main-menu__list>li>ul>li>ul,
@@ -1371,11 +1373,6 @@ a.video-popup {
   box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 1199px) {
-  .stricky-header {
-    display: none !important;
-  }
-}
 
 .stricky-header.stricky-fixed {
   -webkit-transform: translateY(0);
@@ -1419,6 +1416,7 @@ a.video-popup {
   cursor: pointer;
   -webkit-transition: 500ms;
   transition: 500ms;
+  margin: 35px 0;
 }
 
 .main-menu .mobile-nav__toggler:hover {
@@ -1855,6 +1853,7 @@ a.video-popup {
 .text-white {
   color: var(--tecture-white) !important;
 }
+
 .main-menu-two__search:hover {
   background-color: var(--tecture-black);
   border: 1px solid var(--tecture-black);
@@ -2764,12 +2763,15 @@ a.video-popup {
   transition: all 0.5s ease;
   z-index: 1;
 }
+
 .items-center {
   align-items: center !important;
 }
+
 .justify-center {
   justify-content: center;
 }
+
 .welcome-style1__img .img2:hover::before {
   opacity: .50;
 }
@@ -4810,10 +4812,6 @@ a.video-popup {
 
 
 
-
-
-
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .main-slider__title {
     font-size: 55px;
@@ -4918,7 +4916,19 @@ a.video-popup {
     display: none;
   }
 
+  .feature-two__title {
+    font-size: 16px;
+    margin-top: 18px;
+  }
 
+  .feature-two .res-py {
+    padding-top: 12px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .feature-two__icon span {
+    font-size: 42px;
+  }
 
   .main-slider-two {
     padding-left: 0;
@@ -4939,7 +4949,8 @@ a.video-popup {
 
   .main-slider-two .item {
     padding-top: 120px;
-    padding-bottom: 240px;
+    padding-bottom: 170px;
+    min-height: 100vh;
   }
 
   .main-header {
@@ -5098,12 +5109,16 @@ a.video-popup {
   body {
     overflow: auto !important;
   }
-  .about-two, .team-one {
+
+  .about-two,
+  .team-one {
     padding-top: 120px;
   }
+
   .about-two__img img {
     width: 100%;
   }
+
   .horizontal-scroll {
     white-space: normal;
     overflow-x: auto;
@@ -5111,22 +5126,25 @@ a.video-popup {
     height: auto;
     width: 100%;
   }
-  
-  .horizontal-scroll > * {
+
+  .horizontal-scroll>* {
     display: block;
     width: 100%;
     height: auto;
   }
-  
+
   .about-two {
     height: auto !important;
-    padding-top: 120px; /* Adjust for mobile */
+    padding-top: 120px;
+    /* Adjust for mobile */
   }
-  
+
   .main-slider-two {
-    height: auto; /* Allow banner to be natural height on mobile */
-    min-height: 100vh;
+    height: auto;
+    /* Allow banner to be natural height on mobile */
+    height: 100vh;
   }
+
   .testimonial-one {
     padding-top: 120px;
   }
@@ -5162,8 +5180,6 @@ a.video-popup {
   .main-menu__top {
     display: none;
   }
-
-
 
 
 

@@ -387,8 +387,10 @@
 
 .main-slider-two .item {
     position: relative;
-    padding-top: 280px;
+    padding-top: 160px;
     padding-bottom: 240px;
+    display: flex;
+    align-items: center;
     background-color: var(--tecture-black);
     z-index: 10;
 }
@@ -471,10 +473,10 @@
 
 .main-slider-two__title {
     position: relative;
-    font-size: 70px;
+    font-size: 50px;
     color: var(--tecture-white);
     font-weight: 700;
-    line-height: 90px;
+    line-height: 60px;
     font-style: normal;
     text-transform: uppercase;
     opacity: 0;
