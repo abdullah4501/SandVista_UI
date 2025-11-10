@@ -97,7 +97,7 @@ export default function Banner() {
                   <h2 className="main-slider-two__title">We Bring Global Construction <br />Trends to Pakistan</h2>
                   <p className="main-slider-two__text">
                     At Sand Vista, we are bridging the gap between Pakistan and the world’s most advanced
-                    construction methodologies. <br />Our focus is on <b>digital transformation</b>,
+                    construction methodologies. <br />Our focus is on <b>digital transformation, </b>
                     <b>modular construction</b>, and <b>sustainability</b>, ensuring excellence from planning to delivery.
                   </p>
                 </div>
@@ -138,7 +138,7 @@ export default function Banner() {
                 <div className="main-slider-two__content">
                   <h2 className="main-slider-two__title">Prefabrication & <br />Modular Construction</h2>
                   <p className="main-slider-two__text">
-                    Time is value — that’s why Sand Vista embraces <b>off-site construction</b>,
+                    Time is value that’s why Sand Vista embraces <b>off-site construction</b>,
                     <b>prefabrication</b>, <br />and <b>modular systems</b> that dramatically reduce build times
                     while maintaining superior quality and sustainability.
                   </p>
