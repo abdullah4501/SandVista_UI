@@ -18,7 +18,7 @@ export default function Testimonial() {
                     <h2 className="section-title__title title-animation mb-5" >
                         Let’s Talk!
                     </h2>
-                    <p className="testimonial-one__text"> Join the Revolution. <br /> Partner with <span style={{fontWeight:'700', color: '#3bacef'}}>Sand Vista</span> and be part of Pakistan’s new construction frontier. Let us build smarter, greener, and stronger together.</p>
+                    <p className="testimonial-one__text"> Join the Revolution. <br /> Partner with <a href="/" style={{fontWeight:'700', color: '#3bacef'}}>Sand Vista</a> and be part of Pakistan’s new construction frontier. Let us build smarter, greener, and stronger together.</p>
                 </div>
 
                 <div className="testimonial-one__top">
@@ -31,7 +31,7 @@ export default function Testimonial() {
                         </div>
                     </div>
                     <div className="d-flex justify-center">
-                        <p className="text-white">Mail Us: info@sandvistabuildersanddevelopers.com</p>                        
+                        <a href="mailto:info@sandvistabuildersanddevelopers.com" className="text-white">Mail Us: info@sandvistabuildersanddevelopers.com</a>                        
                     </div>
                 </div>
 
