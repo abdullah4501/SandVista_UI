@@ -23,16 +23,6 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu }) {
 
                                     <div className="main-menu__search-and-btn-box">
                                       
-                                        {/* <div className="main-menu__btn-box">
-                                            <div className="text">
-                                                <span className="phone">
-                                                    <i className="fa fa-phone"></i>
-                                                </span>
-                                                <div >
-                                                    <Link href="tel:15502505260">+1 (550) 250 5260</Link>
-                                                </div>
-                                            </div>
-                                        </div> */}
                                     </div>
 
                                 </div>

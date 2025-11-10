@@ -25,9 +25,9 @@ export default function Home() {
   return (
     <Layout >
       <div ref={scrollContainerRef} className="horizontal-scroll">
-        <section id="home"><Banner /></section>
-        <section id="about"><About /></section>
-        <section id="team"><NewFooter /></section>
+        <section id="home" className="panel"><Banner /></section>
+        <section id="about" className="panel"><About /></section>
+        <section id="contact" className="panel"><NewFooter /></section>
         
       </div>
     </Layout>

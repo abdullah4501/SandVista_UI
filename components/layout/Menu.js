@@ -6,6 +6,7 @@ export default function Menu() {
       <li>
         <a
           href="#"
+          data-section="home"
           onClick={(e) => {
             e.preventDefault();
             goToSection("home");
@@ -14,21 +15,24 @@ export default function Menu() {
           Home
         </a>
       </li>
+
       <li>
         <a
           href="#"
+          data-section="about"
           onClick={(e) => {
             e.preventDefault();
             goToSection("about");
-            
           }}
         >
           About Us
         </a>
       </li>
+
       <li>
         <a
           href="#"
+          data-section="contact"
           onClick={(e) => {
             e.preventDefault();
             goToSection("contact");
@@ -37,6 +41,7 @@ export default function Menu() {
           Contact
         </a>
       </li>
+
     </ul>
   );
 }

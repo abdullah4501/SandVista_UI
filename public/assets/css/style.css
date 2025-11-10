@@ -75,11 +75,11 @@ body {
   line-height: 26px;
   font-weight: 400;
   color: var(--tecture-gray);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body.locked {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 
@@ -88,14 +88,11 @@ body.locked {
   background-color: #0a0c09;
 }
 
-/* the horizontal scroller */
 .horizontal-scroll {
   display: block;
-  /* NOT flex → avoids breaking Swiper */
   white-space: nowrap;
   overflow-x: hidden;
-  /* hidden (we’re controlling scrollLeft) */
-  overflow-y: hidden;
+  overflow-y: auto; /* Changed from hidden to auto */
   height: 100vh;
   width: 100vw;
 }
@@ -105,9 +102,16 @@ body.locked {
   display: inline-block;
   vertical-align: top;
   width: 100vw;
-  height: 100vh;
+  height: auto; /* Changed from 100vh to auto */
+  min-height: 100vh; /* Ensure at least full viewport height */
   white-space: normal;
-  /* allow normal content wrapping inside */
+}
+
+/* For sections that need specific height control */
+.horizontal-scroll > .panel {
+  height: auto;
+  min-height: 100vh;
+  overflow-y: visible; /* Allow content to flow naturally */
 }
 
 /* hide native scrollbar everywhere */
@@ -124,7 +128,8 @@ body.locked {
   display: inline-block;
   vertical-align: top;
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   /* not full screen; lets footer be natural height */
   white-space: normal;
   /* allow wrapping inside footer */
@@ -4819,9 +4824,6 @@ a.video-popup {
     padding: 0px 30px;
   }
 
-
-
-
   .main-slider-two {
     padding-left: 0;
   }
@@ -5104,27 +5106,31 @@ a.video-popup {
   }
   .horizontal-scroll {
     white-space: normal;
-    /* stop horizontal line-up */
     overflow-x: auto;
     overflow-y: auto;
     height: auto;
-    /* allow page to grow */
     width: 100%;
+  }
+  
+  .horizontal-scroll > * {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .about-two {
+    height: auto !important;
+    padding-top: 120px; /* Adjust for mobile */
+  }
+  
+  .main-slider-two {
+    height: auto; /* Allow banner to be natural height on mobile */
+    min-height: 100vh;
   }
   .testimonial-one {
     padding-top: 120px;
   }
-  .about-two {
-    height: auto !important;
-  }
 
-  .horizontal-scroll>* {
-    display: block;
-    /* stack vertically */
-    width: 100%;
-    height: auto;
-    /* sections get natural height */
-  }
 
 }
 

@@ -1,6 +1,8 @@
 'use client'
 import { useEffect, useRef } from 'react'
 
+export let horizontalScrollController = null;
+
 export default function useHorizontalScroll(
   ref,
   { speed = 2, ease = 0.1, breakpoint = 992 } = {}
@@ -78,5 +80,6 @@ export default function useHorizontalScroll(
     }
   }, [ref, speed, ease, breakpoint])
 
+  horizontalScrollController = scrollToX
   return scrollToX
 }
