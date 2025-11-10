@@ -237,12 +237,14 @@
 .about-two {
   position: relative;
   display: block;
-  padding: 150px 0 120px;
+  padding-top: 150px;
   overflow: hidden;
   background-color: var(--tecture-black);
   z-index: 1;
   height: auto; /* Remove fixed 100vh */
   min-height: 100vh; /* But ensure minimum full height */
+  display: flex;
+  align-items: center;
 }
 
 .about-two__shape-1 {

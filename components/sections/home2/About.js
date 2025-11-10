@@ -11,7 +11,7 @@ export default function About() {
                     <img src="assets/images/shapes/about-two-shape-1.png" alt="" />
                 </div>
                 <div className="container">
-                    <div className="row items-start">
+                    <div className="row items-center">
                         <div className="col-md-6 col- wow fadeInLeft" data-wow-delay="100ms">
                             <div className="about-two__left">
                                 <div className="section-title text-left sec-title-animation animation-style2">
@@ -45,10 +45,6 @@ export default function About() {
                                         </div>
                                     </li>
                                 </ul>
-
-                                <p className="about-two__text">
-                                    My journey across the construction landscape from residential developments and commercial complexes to infrastructure and smart housing projects has shown me that Pakistan is ready for a new standard. A standard where precision meets sustainability, where craftsmanship is enhanced by technology, and where every project is driven by purpose.
-                                </p>
                                 <h3 className="about-end mt-5">Kamal Ahmed Siddiqui</h3>
                                 <p className="about-subtitle">Founder & CEO</p>
                             </div>
