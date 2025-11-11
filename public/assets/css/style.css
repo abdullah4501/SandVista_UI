@@ -4950,7 +4950,7 @@ a.video-popup {
   .main-slider-two .item {
     padding-top: 120px;
     padding-bottom: 170px;
-    min-height: 100vh;
+    min-height: 120vh;
   }
 
   .main-header {
@@ -4995,23 +4995,6 @@ a.video-popup {
     margin-bottom: 20px;
     justify-content: center;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
@@ -5142,14 +5125,13 @@ a.video-popup {
   .main-slider-two {
     height: auto;
     /* Allow banner to be natural height on mobile */
-    height: 100vh;
+    /* height: 100vh; */
   }
 
   .testimonial-one {
     padding-top: 120px;
+    padding-bottom: 120px;
   }
-
-
 }
 
 

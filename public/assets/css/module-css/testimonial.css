@@ -4,8 +4,10 @@
 .testimonial-one {
     position: relative;
     display: block;
-    padding: 240px 0 90px;
+    padding-top: 150px;
     z-index: 1;
+    display: flex;
+    align-items: center;
 }
 
 .testimonial-one__shape1 {
