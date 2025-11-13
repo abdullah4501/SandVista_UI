@@ -8,6 +8,7 @@
     z-index: 1;
     display: flex;
     align-items: center;
+    min-height: 95vh;
 }
 
 .testimonial-one__shape1 {
