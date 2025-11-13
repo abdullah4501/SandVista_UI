@@ -11,7 +11,7 @@ export default function About() {
                     <img src="assets/images/shapes/about-two-shape-1.png" alt="" />
                 </div>
                 <div className="container">
-                    <div className="row items-center">
+                    <div className="row items-start">
                         <div className="col-md-6 col- wow fadeInLeft" data-wow-delay="100ms">
                             <div className="about-two__left">
                                 <div className="section-title text-left sec-title-animation animation-style2">
