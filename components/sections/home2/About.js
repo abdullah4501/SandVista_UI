@@ -53,7 +53,7 @@ export default function About() {
                         <div className="col-md-6 wow fadeInRight" data-wow-delay="300ms">
                             <div className="about-two__right">
                                 <div className="about-two__img">
-                                    <img src="assets/images/team/1.png" alt="" />
+                                    <img src="assets/images/team/team4.png" alt="" />
                                 </div>
                             </div>
                         </div>
